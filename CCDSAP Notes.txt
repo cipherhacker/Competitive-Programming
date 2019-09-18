@@ -9,7 +9,7 @@
 
 2. stack and queue .. push and pop .. .top() .. .front() .. .back()
 
-3.
+3. For Your UFDS code ... Convert the nodes w.r.t 0 based indexing ... If there's a connection between 1 and 2 .. Make it 0 and 1
 ---------------------------------------------------
 #include <climits>
 INT_MIN
