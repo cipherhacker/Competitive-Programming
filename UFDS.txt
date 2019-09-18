@@ -1,0 +1,64 @@
+void init(ll arr[], ll size[], ll n)
+{
+    ll i;
+    
+    f(i,n)
+    {
+		arr[i] = i ;
+		size[i] = 1;
+	}
+}
+
+ll root (ll arr[] ,ll i)
+{
+    while(arr[i] != i)
+    {
+        arr[i] = arr[arr[i]] ; 
+		i = arr[i]; 
+    }
+	return i;
+}
+
+bool find(ll arr[],ll a,ll b)
+{
+    if(root(arr,a)==root(arr,b))       //if a and b have same root,means they are connected.
+    	return true;
+    else
+    	return false;
+}
+
+void Union(ll arr[],ll size[],ll a,ll b,ll cond)
+{
+    ll root_a = root(arr,a);
+    ll root_b = root(arr,b);
+    
+    if(root_a != root_b)
+    {
+
+        if(cond == -1)
+        {
+    	    if(size[root_a]<size[root_b])
+    	    {
+    			arr[root_a] = root_b;
+    			size[root_b] += size[root_a];
+    		}
+    	    else
+    	    {
+    			arr[root_b] = root_a;
+    			size[root_a] += size[root_b];
+    		}
+        }
+        else if(cond == 0)
+        {
+        	//a should be the parent
+        	arr[root_b] = root_a;
+    		size[root_a] += size[root_b];
+        }
+        else
+        {
+        	//b should be the parent
+    		arr[root_a] = root_b;
+    		size[root_b] += size[root_a];
+        }
+    }
+}

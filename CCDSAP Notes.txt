@@ -1,0 +1,18 @@
+1. PQ
+	non incresing order(By default max heap)
+	.size()
+	.empty()
+	.push()
+	.pop()
+	.top()
+	for min heap :- multiply values by -1
+
+2. stack and queue .. push and pop .. .top() .. .front() .. .back()
+
+3.
+---------------------------------------------------
+#include <climits>
+INT_MIN
+
+Around 10^7 operations are allowed per second .. So decide accordingly .. For 10^6 operations .. You can go for O(n) then..
+---------------------------------------------------
