@@ -15,4 +15,7 @@
 INT_MIN
 
 Around 10^7 operations are allowed per second .. So decide accordingly .. For 10^6 operations .. You can go for O(n) then..
+
+cout<<fixed<<setprecision(4)<<ans<<endl;
+
 ---------------------------------------------------
