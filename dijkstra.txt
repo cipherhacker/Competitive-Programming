@@ -1,0 +1,48 @@
+/*
+vll g[n] -- source,dest,weight
+bool visited[n]
+dist vector inside dijkstra function
+*/
+
+void dijkstra(ll s,vll g[],bool visited[],ll n)
+{
+    set< pll > sd;
+    
+    set< pll > :: iterator itx;
+    
+    vector< ll > dis(n,INF);
+    
+    sd.insert(mp(0,s)); //source and weight (2,0)
+    
+    dis[s]=0;
+
+    while(!sd.empty())
+    {
+        pll p = *(sd.begin());
+        sd.erase(sd.begin());
+
+        ll u = p.second;  // getting the node to traverse the graph 
+        vll :: iterator it;
+        
+        visited[u] = true;
+
+        for(it=g[u].begin();it!=g[u].end();it++)
+        {
+            ll v=(*it).first;  
+            ll weight=(*it).second;   
+
+            if(dis[v]>dis[u]+weight && !visited[v])  
+            {
+                
+                if(dis[v]!=INF)
+                {
+                    sd.erase(sd.find(mp(dis[v],v)));
+                }
+
+                dis[v] = dis[u]+weight;  
+                sd.insert(mp(dis[v],v)); 
+            }
+        }
+        
+    }
+}
