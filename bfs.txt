@@ -1,0 +1,29 @@
+/*
+bool visted[n]
+vector < ll > g[n]
+*/
+
+void bfs(ll u,bool visited[],vector < ll > g[]) 
+{
+    queue<ll>q;
+    
+    visited[u] = true;
+    
+    q.push(u);
+    
+    while(!q.empty())
+    {
+        ll p=q.front();
+        q.pop();
+        
+        for(int i:g[p])
+        {
+            if(!visited[i])
+            {
+                visited[i] = true;
+                q.push(i);
+            }
+        }
+        
+    }
+}

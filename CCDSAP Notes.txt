@@ -19,3 +19,10 @@ Around 10^7 operations are allowed per second .. So decide accordingly .. For 10
 cout<<fixed<<setprecision(4)<<ans<<endl;
 
 ---------------------------------------------------
+4. Segment Tree - Keep size of the tree as 4*n
+
+5. DFS/BFS
+
+Transitive Closure - Matrix which shows which node can be reached by which node
+Connected Components - Sepeare Subgraphs
+
