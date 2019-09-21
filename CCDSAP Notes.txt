@@ -26,3 +26,7 @@ cout<<fixed<<setprecision(4)<<ans<<endl;
 Transitive Closure - Matrix which shows which node can be reached by which node
 Connected Components - Sepeare Subgraphs
 
+6. MSP
+
+Kruskal -- select the edges with least weight such that it doesn't create a cycle
+Prim -- Start from the source keep connecting edge with least weight such that it doesn't create a cycle

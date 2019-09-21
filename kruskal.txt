@@ -1,0 +1,23 @@
+/* pair<ll , pll > p[] -- array index doesn't matter .. dist,x,y nodes
+arr[n] for maintaining Disjoint set*/
+
+ll kruskal(pair< ll, pll > p[],ll edges)
+{
+    ll x, y;
+    ll cost, minimumCost = 0;
+    
+    for(ll i = 0;i < edges;++i)
+    {
+        // Selecting edges one by one in increasing order from the beginning
+        x = p[i].second.first;
+        y = p[i].second.second;
+        cost = p[i].first;
+        // Check if the selected edge is creating a cycle or not
+        if(root(x) != root(y))
+        {
+            minimumCost += cost;
+            Union(x, y);
+        }    
+    }
+    return minimumCost;
+}
