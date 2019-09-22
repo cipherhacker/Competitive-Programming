@@ -1,0 +1,30 @@
+ll LISfast(vector< ll >& v) 
+{ 
+    ll l = v.size();
+
+    if (l == 0) 
+        return 0; 
+  
+    vector< ll > tail(l, 0); 
+    ll length = 1; // always polls empty slot in tail 
+  
+    tail[0] = v[0]; 
+
+    for (ll i = 1; i < l; i++) {
+
+        if (v[i] > tail[length - 1]) 
+            tail[length++] = v[i]; 
+        else { 
+            // TO check whether the element is not present before hand 
+            auto it = find(tail.begin(), tail.begin() + length, v[i]); 
+            if (it != tail.begin() + length) { 
+                continue; 
+            } 
+            // If not present change the tail element to v[i] 
+            it = upper_bound(tail.begin(), tail.begin() + length, v[i]); 
+            *it = v[i]; 
+        } 
+    } 
+  
+    return length; 
+} 

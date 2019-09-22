@@ -1,0 +1,18 @@
+ll lis( ll arr[], ll n )  
+{  
+    ll lis[n]; 
+   
+    lis[0] = 1;    
+  
+    /* Compute optimized LIS values in bottom up manner */
+    for (ll i = 1; i < n; i++ )  
+    { 
+        lis[i] = 1; 
+        for (ll j = 0; j < i; j++ )   
+            if ( arr[i] > arr[j] && lis[i] < lis[j] + 1)  
+                lis[i] = lis[j] + 1;  
+    } 
+  
+    // Return maximum value in lis[] 
+    return *max_element(lis, lis+n); 
+}  

@@ -30,3 +30,16 @@ Connected Components - Sepeare Subgraphs
 
 Kruskal -- select the edges with least weight such that it doesn't create a cycle
 Prim -- Start from the source keep connecting edge with least weight such that it doesn't create a cycle
+
+7. Topological Sort
+
+Do DFS and keep on adding nodes to the stack when coming back from the calls .. In the end print the contents of the stack .. Topological sort can have many order's .. In each order if there is an edge from u to v .. u should come before v in the sequence
+
+8. Euler Path
+
+All Edges are visited exactly once .. Here , all non zero degree vertices should be connected and All should be having even degree
+
+9. Strongly Connected Components
+
+Can go from one node to all other nodes
+Kosaraju -- Apply dfs and when a node is finished(no unvisited neighbours) add it in stack .. reverse all the connections and pop the nodes and apply dfs .. The nodes that can be visited by keeping the popped node as source are all strongly connected.
