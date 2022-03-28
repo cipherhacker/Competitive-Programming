@@ -1,0 +1,33 @@
+#include <queue>
+#include <iostream>
+
+#define INF 1e18
+
+void dijkstra(int source, vector<int> graph[],int n) {
+	
+	visited[source] = true;
+
+	vector dist(n, INF);
+
+	dist[source] = 0;
+
+	priority_queue< int, vector<pair<int,int>>, greater<int> > nodes;
+
+	nodes.push(make_pair(0, source));
+
+	while(!nodes.empty()) {
+
+		pair<int,int> currentPair = nodes.top();
+		int node = currentPair.second;
+
+		for(auto it = graph[node].begin(), it !=  graph[node].end(); it++) {
+			int neighbourDist = it->first;
+			int neighbourNode = it->second;
+
+			if(dist[neighbourNode] > neighbourDist + dist[node]) {
+				dist[neighbourNode] = neighbourDist + dist[node];
+				nodes.push(make_pair(dist[neighbourNode], neighbourNode));
+			}
+		}
+	}
+}

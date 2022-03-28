@@ -1,0 +1,26 @@
+int dp[n+1][W+1];
+memset(-1, dp, sizeof(dp));
+
+int knapsack(int items[], int weight[], int n, int W) {
+	
+	for(int i to n) {
+		for(int j to W) {
+			if(i == 0 || j == 0) {
+				dp[i][j] = 0;
+			}
+		}
+	}
+
+	for(int i = 1; i<=n;i++) {
+		for(int j=1; j<= W; j++) {
+
+			if(weight[i-1] <= W) {
+				dp[i][j] = max(dp[i-1][j], val[i-1] + dp[i-1][j - weight[i-1]]);
+			}
+			else {
+				dp[i][j] = dp[i-1][j];
+			}
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+void dfs(bool visited[], vector <int> graph, int source) {
+
+	visited[source] = true;
+
+	for(int node: graph[source]) {
+		if(!visited[source] == true) {
+			dfs(visited, graph, node);
+		}
+	}
+
+}
+
+// With Stack, Same like BFS

@@ -1,0 +1,44 @@
+//Greedy Algorithm
+// E log E or E Log V
+
+init()
+root()
+union()
+find()
+
+
+int kruskal(pair <long long, pair<int,int>> pairs[]) {
+	int cost, minCost = 0;
+
+	int from, to;
+	int edges = pairs.size();
+
+	for(i=0 to edges) {
+		from = edges[i].second.first;
+		to = edges[i].second.second;
+
+		cost = edges[i].first;
+
+		if(root(from) != root(to)) {
+			minCost += cost;
+			union(from, to);
+		}
+	}
+}
+
+int main() {
+	
+	init();	
+	cin >> nodes >> edges;
+
+	pair <long long, pair<int,int>> pairs[edges];
+
+	for(i=0 to edges) {
+		cin >> x >> y >> weight;
+		pairs[i] = make_pair(weight,make_pair(x,y));
+	}
+
+	sort(pairs, pairs+edges);
+	minimumCost = kruskal(pairs);
+}
+

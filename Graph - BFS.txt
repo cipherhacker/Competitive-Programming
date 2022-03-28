@@ -1,0 +1,21 @@
+#include <queue>
+
+void bfs(bool visited[], vector<int> graph[], int source) {
+	visited[source] = true;
+
+	queue < int > nodes;
+
+	nodes.push(source);
+
+	if(!nodes.empty()) {
+		int current = nodes.front();
+		nodes.pop();
+
+		for(int neighbour: graph[source]) {
+			if(!visited[neighbour]) {
+				visited[neighbour] = true;
+				nodes.push(neighbour);
+			}
+		}
+	}
+}

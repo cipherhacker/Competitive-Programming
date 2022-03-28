@@ -1,0 +1,88 @@
+#include <iostream>
+
+using namespace std;
+
+class BST {
+	
+	public:
+		int value;
+		BST *left, *right;
+
+	BST(): value(0),left(nullptr),right(nullptr)  {
+		 
+	}
+
+	BST(int valx): value(valx),left(leftx),right(rightx)  {
+		 
+	}
+
+	BST* insert(BST *root, int value) {
+
+		if(!root) {
+			return new BST(value);
+		}
+
+		if(value > root->value) {
+			root->right = Insert(root->right, value);
+		}	
+		else {
+			root->left = new BST(root->left, value);
+		}
+
+		return root;
+	}
+
+	int main() {
+		cin>>value;
+
+		BST *root = nullptr;
+
+		root = root.insert(root, 50);
+
+
+	}
+
+
+}
+
+
+
+#include <iostream>
+
+using namespace std;
+
+class BST {
+	int value;
+	BST *left, *right;
+
+public:
+	BST(): data(0), left(nullptr), right(nullptr) { }
+
+	BST(int value): data(value), left(nullptr), right(nullptr) {}
+
+	BST* insert(BST *root, int value) {
+
+		if(!root) {
+			return new BST(value);
+		}
+
+		if(value > root->value) {
+			root->right = insert(root->right, value);
+		}
+		else {
+			root->left = insert(root->left, value);
+		}
+
+		return root;
+	} 
+}
+
+int main() {
+	
+	BST* bst = new BST(5);
+
+	bst.insert()
+
+
+	return 0;
+}
